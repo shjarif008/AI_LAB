@@ -1,0 +1,35 @@
+1.	Area of a Rectangle 
+Program (arithmetic.pl): 
+area_rectangle(Length, Breadth, Area) :- Area is Length * Breadth. 
+ 
+This rule computes the area of a rectangle by multiplying length and breadth using the is predicate. 
+Sample Query & Output: 
+?- area_rectangle(5, 8, Area). 
+Area = 40 
+2.	Celsius to Fahrenheit Conversion 
+Program (arithmetic.pl): 
+celsius_to_fahrenheit(C, F) :- F is C * 9 / 5 + 32. 
+ 
+This rule converts a temperature from Celsius to Fahrenheit using the standard conversion formula. 
+Sample Query & Output: 
+?- celsius_to_fahrenheit(25, F). 
+F = 77.0 
+3. Factorial Calculation 
+Program (arithmetic.pl): 
+factorial(0, 1). 
+factorial(N, Result) :- 
+    N > 0, 
+    N1 is N - 1,     factorial(N1, SubResult), 
+    Result is N * SubResult. 
+ 
+This program recursively computes the factorial of a number using arithmetic operations and recursive rule invocation. 
+Sample Query & Output: 
+?- factorial(5, F). 
+F = 120 
+ 
+Output Summary 
+ 
+Program 	Query Example 	Output 
+Area Calculator 	area_rectangle(5,8,Area) 	Area = 40 
+Temperature Converter celsius_to_fahrenheit(25,F) F = 77.0 
+Factorial 	factorial(5,F) 	F = 120 
