@@ -1,0 +1,30 @@
+Program 1: Find Max and Min 
+This Prolog program finds the maximum and minimum of two numbers: 
+find_max(X, Y, X) :- X >= Y, !. find_max(X, Y, Y) :- X < Y. find_min(X, Y, X) :- X =< Y, !. 
+find_min(X, Y, Y) :- X > Y. 
+ 
+Sample Queries and Output: 
+?- find_max(100,200,Max). 
+Max = 200 
+ 
+?- find_min(40,10,Min). 
+Min = 10 
+Prolog returns the correct maximum and minimum values. 
+ 
+Program 2: Resistance of Circuits 
+This program computes equivalent resistance using series and parallel relations: series(R1,R2,Re) :- Re is R1 + R2. parallel(R1,R2,Re) :- Re is (R1 * R2)/(R1 + R2). 
+ 
+Sample Query: 
+?- parallel(10,40,R3), series(R3,12,R4), parallel(R4,30,R5). 
+R3 = 8.0 
+R4 = 20 
+R5 = 12.0 
+Prolog successfully computes each step. 
+Program 3: Line Segment Classification 
+This program classifies line segments based on point coordinates: vertical(seg(point(X,_),point(X,_))). horizontal(seg(point(_,Y),point(_,Y))). 
+oblique(seg(point(X1,Y1),point(X2,Y2))) :- X1 \== X2, Y1 \== Y2. 
+ 
+Sample Query: 
+?- horizontal(seg(point(10,20),point(15,20))). 
+yes 
+Prolog correctly classifies segments. 
